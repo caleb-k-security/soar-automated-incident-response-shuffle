@@ -2,43 +2,52 @@
 
 ## Overview
 
-This project demonstrates hands-on Tier-1 Security Operations Center (SOC) activities using the a SOAR-enabled SOC platform. 
-It focuses on alert detection, investigation, evidence validation, and professional incident documentation in a controlled lab environment.
+This project demonstrates the design and implementation of a SOAR-based automated incident response system using Shuffle.
 
-The objective is to replicate real-world SOC workflows, emphasizing accuracy, escalation discipline, and evidence-based analysis.
+The platform was built to simulate real SOC automation workflows that respond to SIEM alerts by validating risk, applying decision logic, and executing controlled response actions.
+
+The objective was to demonstrate how Tier-1 SOC investigations can transition into structured, auditable automated response playbooks while maintaining security guardrails.
 
 ## SOC Role Alignment
 
-This project aligns with Tier-1 SOC analyst responsibilities, including:
+This project reflects Tier-1 and Tier-2 SOC responsibilities, including:
 
-- Monitoring and triaging security alerts
-- Investigating endpoint and log-based detections
-- Validating suspicious activity using telemetry
-- Documenting incidents clearly for escalation
-- Mapping detections to MITRE ATT&CK techniques
+- Translating SIEM alerts into structured response workflows
+- Applying validation logic before automated actions
+- Simulating containment actions such as IP blocking and account disablement
+- Automating phishing response while maintaining analyst oversight
+- Maintaining audit logs for SOC accountability
 
 ## Lab Environment
 
-- SOAR-enabled SOC platform for alert triage and response
-- Windows 10 endpoint with enhanced logging
-- Kali Linux (attack simulation)
-- Isolated virtualized environment (VirtualBox)
+- Ubuntu Server (SOAR host)
+- Shuffle SOAR platform running in Docker containers
+- Simulated SIEM alerts delivered via webhooks
+- Controlled virtual lab environment (VirtualBox)
 
-The lab was designed to maintain clear separation between attacker, victim, and monitoring components.
+The environment was designed to model how real SOC teams integrate SIEM alerts with SOAR automation.
 
-## Detection and Investigation Summary
+## Automation Playbooks Implemented
 
-Security alerts were generated through controlled and non-malicious attack simulations, including:
+Three automated SOC response workflows were developed:
 
-- Suspicious PowerShell execution
-- Encoded command usage
-- Registry-based persistence techniques
+1. **Malicious IP Auto Response**
+   - Validates severity of SIEM alerts
+   - Simulates IP blocking action
+   - Logs response for SOC audit
 
-Each alert was investigated by analyzing:
-- Process execution details
-- Command-line arguments
-- Registry modifications
-- Event timestamps and host context
+2. **Account Compromise Auto Response**
+   - Validates failed login thresholds
+   - Simulates disabling compromised user accounts
+   - Records actions and notifies SOC
+
+3. **Phishing Email Auto Isolation**
+   - Simulates threat intelligence hash checks
+   - Applies decision logic before isolating email
+   - Logs response and alerts analysts
+
+Each playbook demonstrates structured decision-making, not blind automation.
+
 
 ## Evidence and Documentation
 
@@ -53,12 +62,12 @@ All evidence is preserved and organized to reflect real SOC documentation standa
 
 ## Skills Demonstrated
 
-- SIEM monitoring and alert triage
-- Endpoint log analysis (Windows & Sysmon)
-- Incident documentation and reporting
-- MITRE ATT&CK mapping
-- Evidence validation and investigation workflow
-- Professional SOC communication
+- SOAR platform deployment and configuration
+- Automation workflow design and testing
+- Security decision logic implementation
+- Simulated incident containment procedures
+- SOC audit logging and response documentation
+- Integration of SIEM alerts into automated workflows
 
 ## Disclaimer
 
