@@ -1,4 +1,4 @@
-# Hands-On Tier-1 SOC Operations Using Wazuh: Detection, Investigation, and Incident Documentation
+# Hands-On Tier-1 SOC Operations Using Shuffle SOAR: Detection, Investigation, and Incident Documentation
 
 ## Overview
 
